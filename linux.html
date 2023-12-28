@@ -1,0 +1,838 @@
+	BASH SHELL
+1.virtualization:	"Shell scripting :
+nrmly shells are interactive 
+it mns shells accept commands from users and executes them 
+but if u use sequence of commands one by one u can store this sequence of commands to text
+file and tell the shell to exeute this text file this is called shell scripting "
+"-using virtualization we can create multiple virtual machine on bare metal hardware
+-what is bare metal harware
+-physical machine(hardware)
+-3.traditional environment:
+Application
+Host Operating system
+hardware
+-there's prblm with this system so invented the Virtualization
+4.here we are discussing abt the hardware virtualization
+vm1 vm2 vm3
+hypervisor
+system hardware
+5.hypervisor
+-hypervisor is a software using which we can create virtualize environment 
+-it also divides the hardware component and virtual machine
+6.types of hypervisor :
+-vmware EsXi server
+-Orachel virtual box
+-vm ware workstation
+-kvm virtualization
+7.Nested Virtualization
+-virtualization inside the virtual machine
+-but your hardware should suppport nested virtualization"	"1)Bash is the default shell in linux 
+2)it offers an efficient environment for interacting with the operating system and scripting 
+3)bash is the programming language for running command 
+Bash Shell : when you use linux so you need to deal with this kind of environment with terminal so lets see what it indicates
+4)so in os there is a special program called ""Shell"".shell accepts ypur instructions or command in english and if its a valid command it is passes to kernal 
+------------------------------------------------------------------------------------------------------------------------------
+to check which shells are installed in ur system 
+cat etc/shells 
+/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/usr/bin/sh
+/bin/dash
+/usr/bin/dash
+-------------------------------------------------------------------------------------------------------------------------------------
+[root@comp1 ~]#
+root: its a username
+Comp1: its a computer name
+~ : it a tilt symbol which indicates home directory of user (present working directory )
+# : this represents super user is login
+[anjum@machine-name ~]$
+anjum : username
+Machine-name : computer name
+~ : indicates home directory of user
+$ : indicates normal user is login
+------------------------------------------------------------------------------------------------------------------------------
+Types of Variable:
+1)local variable 
+2)Environment Variable 
+3)predefined variable 
+1-Local Variable:
+-There are rules for defining or creating variables in the shell
+-The variable name must be prefixed with the doller ($)symbol
+-The variable must contain no spaces or special charecters with in variable name ,a variable name can contain 
+(a to z or A to Z) (0-9) (_) or they can be Uper case as well 
+name= ""shah""
+age=""28""
+----------------------------------------------------------------------------------------------------------------------------------
+root@ip-10-0-0-221:~# nano shell.sh 
+#!/bin/bash
+name=""shah""
+echo ${name}
+#!/bin/bash :This first line indicates which interpreter to use while runninng this scripts 
+
+----------------------------------------------------------------------------------------------------------------------------------
+./shell.sh
+-------------------------------------------------------------------------------------------------------------------------------------
+$HOME:Defines the users Home Directory 
+$PATH:indicates the locations of the command 10"
+1)What is Operating system:	
+"
+-user can communicate with hardware so to communicate with hardware components user
+required some special software i.e Operating system
+2)why linux Operating system?
+-so the reason is why linux os is better than windows is
+-it is freeware (like windows operating system required license to use)so here we are not
+Require to pay anything
+-it is open source software (i.e source code is open we can customized the source code based
+on our requirement )
+-it is FOSS(i.e free ware and open source software)
+-it is multi user OS (i.e multiple user can work simultaneously )
+-it is multi tasking operating system
+-it is user friendly and support both CLI based and GUI based
+--it is more secure then windows operating system
+Components of os:
+1)shell
+2)kernal
+Basically shell +kernal is nothing but OS
+Shell:
+1.shell is nothing but it is outer layer of anyOS 
+2)shell reads the command provided by user
+3)shell will check whether it is valid command or not
+4)shell will check whether it is properly used or not
+5)if everything is proper then shell interprets /convert that command into kernel understandable
+form and handover that to kernal
+6)shell act as a interface between user and kernal
+7)eg of shells are:
+Bourne shell   (sh)
+Korne shell
+Bash shell      (bourne again shell)
+C-shell            (csh)
+T-shell
+Z-shell
+Kernal:
+1)kernal is responsible to execute that command and provide require result
+2)it is core component of any Unix os
+3)it is responsible to execute our command with the help of hardware components
+4)memory allocation and processor allocation will take care of kernal
+5)it understand low level language eg assembly level language
+6)it act as a interface between shell and hardware components"	
+Linux file system hierarchy /Root diretcory Structure 	
+"1.linux file system has tree like structure 
+2.It starts with (/) forward slash it is the topmost directory or root Directory
+which has several sub directory
+3.root —>the root user's home directory (note this is different then / slash )
+4.etc:all system configuration files and files which maintain information about users and groups 
+5.bin: bin means binary bin contains all binary executables files (command that can be used by normal user)
+6.usr:>it contains sub directories
+/—>bin (It contains all binary executable related to our linux commands)
+/—>sbin (Superuser used commands related binary executables files available in sbin directory)
+the default directory provided by linux OS to create usr home directories and contain manual pages also 
+contain executable commands 
+7.tmp:system or user create temprory files which will be removed when the server reboots 
+8.dev: contain all device files 
+9.home: contain users directory and files 
+10.lib: contain all library files 
+11.mnt : contain device files related to mounted devices 
+12.proc :contain files related to system processes
+13.var: contain all system log files and messeges files "	"ubuntu@ubuntu-virtual-machine:/$ ls
+app   cdrom  home   lib64       media  proc  sbin  swapfile  usr
+bin   dev    lib    libx32      mnt    root  snap  sys       var
+boot  etc    lib32  lost+found  opt    run   srv   tmp
+-----------------------------------------------------------------------------------
+/ 
+bin dev etc home lib mount proc root sbin tmp usr 
+cd bin
+cp ksh ls pwd 
+cd etc 
+passwd 
+cd usr
+bin sbin"
+find information about your system 	
+"1.whoami :prints the username 
+--------------------------------------------------------------------------------------------------------------------
+2.who
+it displays the list of users currently logged In 
+--------------------------------------------------------------------------------------------------------------------
+3.w
+show who is logged In and what they are Doing 
+-------------------------------------------------------------------------------------------------------------------
+4.uname :
+it will show you the kernel name
+-------------------------------------------------------------------------------------------------------------------
+5.uptime: Tell how long the system has been running 
+-------------------------------------------------------------------------------------------------------------------
+6.users:it prints the username 
+-------------------------------------------------------------------------------------------------------------------
+7.date :it is used to set the date or display 
+--------------------------------------------------------------------------------------------------------------------
+8.ifconfig:id user wants to check the ip address of his machine he can use ifconfig 
+-------------------------------------------------------------------------------------------------------------------
+9.hostname:it simply pirnts the name of the computer 
+-------------------------------------------------------------------------------------------------------------------
+10.free :it display the memory usage details ,the amount o ffree and used memory ,it 
+display the total amount of free and used physical and swap memory 
+------------------------------------------------------------------------------------------------------------------
+11.df -h: it display information about total space and avialable space in file system 
+------------------------------------------------------------------------------------------------------------------
+12.head : it shows 1st 10 lines of the file
+[ head -n 3 thursday1 —>n indicates no of lines]
+------------------------------------------------------------------------------------------------------------------
+13.)tail : view content from bottom of the file
+[tail -n 4 thursday1]
+------------------------------------------------------------------------------------------------------------------
+14)wc : word count [wc -l file1] [wc -w file1] [wc -c file1]
+------------------------------------------------------------------------------------------------------------------
+30)grep: used to search the pattern [ grep goal thursay1]
+------------------------------------------------------------------------------------------------------------------
+31)mkdir directory1 : creates empty directory
+------------------------------------------------------------------------------------------------------------------
+5)rmdir directory1: remove empty directory
+------------------------------------------------------------------------------------------------------------------
+6)ls: list out all files and directories
+------------------------------------------------------------------------------------------------------------------
+7)cd : change directory
+------------------------------------------------------------------------------------------------------------------
+8)touch: to create an empty file
+------------------------------------------------------------------------------------------------------------------
+9)rm: to remove a file
+------------------------------------------------------------------------------------------------------------------
+10)help: to display list of available commands
+------------------------------------------------------------------------------------------------------------------
+11)exit : To logout the session
+------------------------------------------------------------------------------------------------------------------
+12) . : represents current directory
+-----------------------------------------------------------------------------------------------------------------
+13) .. : represents parent directory
+-----------------------------------------------------------------------------------------------------------------
+14)cd .:
+-----------------------------------------------------------------------------------------------------------------
+15)cd .. 👍
+----------------------------------------------------------------------------------------------------------------
+16)cd ~ : to go to user Homedirectory
+----------------------------------------------------------------------------------------------------------------
+Cd - :to go to previous working directory
+----------------------------------------------------------------------------------------------------------------
+Cd : user home directory
+----------------------------------------------------------------------------------------------------------------
+17)ls -l : shows the long listing ==== [drwxrwxr-x 2 anjusuah anjusuah 4096 Jul 13 12:51 dir1]
+----------------------------------------------------------------------------------------------------------------
+18)ls -a:which shows the data with hidden files [files which starts with dot (.)]
+----------------------------------------------------------------------------------------------------------------
+19)ls -lt:show long listing with time sorting
+----------------------------------------------------------------------------------------------------------------
+20)du :disk usage OR  file size 
+du file1 
+du -h file1
+du linux_practice/
+4       linux_practice/
+---------------------------------------------------------------------------------------------------------------
+21)chown: to change the owner 
+chown ec2-user index.html"	"who
+ubuntu   tty2         2023-12-08 01:08 (tty2)
+------------------------------------------------------------------------------------------
+w
+ 11:44:13 up  3:02,  1 user,  load average: 0.33, 0.45, 0.70
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+ubuntu   tty2     tty2             01:08   14:23m  0.58s  0.47s /usr/libexec/gn
+-------------------------------------------------------------------------------------------
+uname -r : shows version of ur os 
+uname -a : it will display everything related to ur machine 
+kernal name , node name , kernal release , kernal version , machine ,
+processor ,hardware platform 
+Linux ubuntu-virtual-machine 6.2.0-36-generic #37~22.04.1-Ubuntu
+SMP PREEMPT_DYNAMIC Mon Oct  9 15:34:04 UTC 2 x86_64 
+x86_64 x86_64 GNU/Linux
+uname -n : prints the machine name 
+--------------------------------------------------------------------------------------------
+uptime 
+ 11:58:30 up  3:16,  1 user,  load average: 0.07, 0.16, 0.37
+-------------------------------------------------------------------------------------------
+ubuntu@ip-10-0-0-221:~$ df -h 
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        20G  1.8G   18G  10% /
+tmpfs           475M     0  475M   0% /dev/shm
+tmpfs           190M  840K  190M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/xvda15     105M  6.1M   99M   6% /boot/efi
+tmpfs            95M  4.0K   95M   1% /run/user/1000"
+1	
+"1.ls:it prints the and directory 
+2.ls -l : long listing 
+1st letter tell us the type of file, what privilages it has and to whom these privilages are 
+granted.There are three types of privilages READ WRITE and EXECUTE,we can make
+ the file executable by giving the privilages 
+d rwx r-x r-x
+d:file type
+rwx: user or owner have read ,write and execute permissions (owner permission)
+r-x:this is the group who have Read and execute permissions (group permission)
+r-x: this implies other who have read and execute permission  (all other use who has 
+account permission) 
+read:4
+Write:2
+execute:1
+d  rwx rw- r–
+   4+2+1  4+2+0 4+0+0 =764
+
+eg:drwxr-xr-x 3 anjusuah anjusuah 4096 Jul 13 12:37 Desktop
+
+1)the first character represents the file type 
+D:directory
+-: normal file 
+l:link files/shortcuts
+2)3:number of hardlink count 
+2)rwxr-xr-x : represents the permissions
+3)anjusuah: user or owner name 
+4)anjusuah : group name
+5)4096 :size of the file 
+6) Jul 13 12:37 : last modiefied or created time 
+7)Desktop :directory name 
+
+File types
+1.Normal file (-)
+2.directory  (d)
+3. hard link (-) additional name for existaning file 
+4.symbolic link (l) shortcut to a file or directory 
+5.socket (s)pass data between two process 
+6.Named pipe (p) linke socket ,user cant work directly with it 
+7.character device ( c) processes charecter
+8.Block file : major and minor number for controlling dev 
+Block file :These files are hardware files most of them are present in /dev
+Represented using (b)
+Character files: provides a serial stream of input or output your terminals are classic example
+of this types of files
+Represented using ( c)
+Link files : A symbolic link is a reference to another file on the system therefore symbolic link
+files are files that point to other files and they can either be directories or regular files
+Represented using ( l )
+Pipes or named pipes: these are files that allow inter process communication by connecting
+the output of the one process to the input of another
+A named piped is actually a file that is used by two process to communicate with each and it act
+as a linux pipe
+Represented using (p)
+Socket files : These are files that provide a means of inter-process communication but they
+can transfer data and information between the process running on different environment
+This mns that socket provide data and information transfer between process running on
+different machines on a network
+An example to show the work of sockets would be a web browser making a connection to a web
+server
+-----------------------------------------------------------------------------------------------------------------
+2)cat :create, append and view file
+Eg:
+Cat > thursday1
+this is thursday morning
+we haad to practice all the goals and complete it by the end of the day
+so we have to keep doing it until our goal is to work
+Press enter and
+^z to save and exit
+cat >> thursday1
+again we are on the same day but we dont have to stop
+keep going till the time you achieve the goal
+but the goal is to be clear in your mind so that you work day and night to achieve it ^Z
+[2]+ Stopped cat >> thursday1
+------------------------------------------------------------------------------------------------------------------
+3)cp:it copies files or group of files 
+cp hello.txt demo.txt
+ubuntu@ip-10-0-0-221:~$ ls
+demo  demo.txt  hello.txt
+ubuntu@ip-10-0-0-221:~$ 
+------------------------------------------------------------------------------------------------------------------
+4)mv:
+it rename file .it moves a group of files to different directory 
+------------------------------------------------------------------------------------------------------------------
+5)rm:delete one or more files 
+-----------------------------------------------------------------------------------------------------------------
+27)uname :it will show you the kernel name
+----------------------------------------------------------------------------------------------------------------
+28)hostname :machine name
+----------------------------------------------------------------------------------------------------------------
+29)sudo -i: if you want to login as root user
+----------------------------------------------------------------------------------------------------------------
+32)wget : from wget we can download the files from internet
+-----------------------------------------------------------------------------------------------------------------
+34)useradd : we can able to create the normal user
+[useradd irfan]
+[cat /etc/passwd]
+----------------------------------------------------------------------------------------------------------------
+35)passwd: to set the password
+[passwd username]
+---------------------------------------------------------------------------------------------------------------
+35)groupadd : able to create the new group
+---------------------------------------------------------------------------------------------------------------
+36)chmod: change the file permission
+--------------------------------------------------------------------------------------------------------------
+37)chown :change the owner or user"	"1) ls -ld /usr: if we want to check the permission of directory not the
+content 
+ls -ld /usr 
+drwxr-xr-x 14 root root 4096 Sep 19 02:19 /usr
+----------------------------------------------------------------------------------------
+2)ls -a:shows us all the files that are hiden with . ..
+ls -a
+.  ..  .bash_logout  .bashrc  .cache  .local  .profile  .ssh 
+ .sudo_as_admin_successful  demo
+---------------------------------------------------------------------------------------"
+symbolic Link	
+"Hard Link and Soft link:
+Hard link: when we create system assign an inode number to it
+System have range of inode number pool
+System identify file using inode number and user identify file using filename
+When we delete file inode number will get free
+Hard Link count for file : single inode number accessed using using multiple filename
+#ls -il —------i is for inode
+#ln file1 file_copied_1
+1704197 --w-rw-rwx 2 anjusuah mygroup 152 Jul 13 12:51 file1
+This means one file is accessing this inode number here 2 represents hardlink count
+1704197 --w-rw-rwx 2 anjusuah mygroup 152 Jul 13 12:51 file_copied_1
+Hard Link count for directory : it specify how many sub directories it contains [the default
+hardlink count is 2 for directories ] but creating hardlink or backup of directory is not allowed..
+#1704147 drwxrwxr-x 2 anjusuah anjusuah 4096 Jul 19 15:42 dir1
+#ls -a —--->insider any directory
+# . ..---------> these are hidden folders inside any directory
+-----------------------------------------------------------------------------------------------------------------
+Softlink for file :
+It is nothing but shortcuts
+#ln -s file2 file2_copied
+-----------------------------------------------------------------------------------------------------------------
+softlink link :softlink is an actual link to origional file ,if u delete the 
+origional file the softlink has no value or data 
+softlink can be done for both file and directories
+hard link :A hardlink is a mirror copy of the origional file where in if u delete the original 
+file the hardlink will still has the data of the original file "	"practical for symbolic link
+[root@ip-172-31-94-167 ec2-user]# ln -s git_practice /mnt/clone_of_git_pracice
+[root@ip-172-31-94-167 ec2-user]# cd /mnt
+[root@ip-172-31-94-167 mnt]# ls
+clone_of_git_pracice  linux_practice
+[root@ip-172-31-94-167 mnt]# ls -l
+total 0
+lrwxrwxrwx. 1 root root  12 Dec 24 07:37 clone_of_git_pracice -> git_practice
+drwxr-xr-x. 3 root root 132 Dec 24 04:26 linux_practice
+--------------------------------------------------------------------------------------------------------------------------------------"
+VI Editor and VIm editor	
+"Vim :which is improved vi editor
+Old editor: Vi editor (visual interface editor)
+1.The VI editor is screen based Text editor 
+i:insert mode 
+esc: getting out 
+:wq: return to save and quit file 
+q!:return to quit the edtitor without the saving chnages "	
+what happens when we login logout 	
+"User account : account through which we can login to machine is called user account .
+Group account : will have multiple similar users in group account and normally used to 
+assign same permissions for multiple users 
+#useradd afrin
+#passwd afrin 
+When a new user account is added to the system  the following operations are performed :
+1.His/Her Home Directory is created (/Home/Username) by default.
+2.The following hidden files are copied into the user’s home directory and will be used to 
+provide environment variables for his/her user session 
+.bash_logout
+.bash_profile
+.bashrc
+3.a mail spool is created for the users at /var/spool/mail/username
+4.a group is created and given the same name as the new user account  —cat /etc/group
+
+Users information gets stored in:
+Users information get saved in /etc/passwd and /etc/shadow
+
+Gaurav:x:1001:1001::    /home/gaurav:/bin/sh
+     |       |      |       |     |     |                           |
+     |       |      |       |     |     |                           |
+     |       |      |       |     |     |                           |_________
+User     x   Uid   Gid  |     users home directory         login shell
+Name   indi               comment
+             Cates
+             Users 
+             Encrypted
+             Password
+             Gets saved in 
+              /etc/passwd
+UID and GID range:
+0 to 999 is reserved for system
+1000 onwards is for users 
+Eg:it will assign the values as next availability value 
+Amol UID:1000, GID=1000
+Santosh UID:1001,GID=1001
+Priya UID:1002, GID=1002
+
+etc/shadow 
+anjusuah:$y$j9T$HPgfMOhxOwqOF4KGw93NW/$vRMCS/1Ex9tJHq3sfzzfnH9AdNvQCqN/9NuBraHt4t6:19550:0:99999:7:::"	
+Monitoring and Managing Linux Process 	
+"1)A process is a program in execution, it’s a running instance of your code or someone 
+else code.
+2)There are two types of processes Background and Foreground
+3)To view the process in linux 👍
+--Top:If you want a repetitive update use top
+-------------------------------------------------------------------------------------------------------------------
+2)ps:it shows currently running processes 
+o/p:
+PID TTY              TIME CMD
+   4343 pts/0        00:00:00 bash
+   4725 pts/0        00:00:00 ps
+--------------------------------------------------------------------------------------------------------------------
+3)ps -a :list all the process on system  
+-------------------------------------------------------------------------------------------------------------------
+4)ps -aux:list all the process on system in details 
+------------------------------------------------------------------------------------------------------------------
+Killing process:
+1)kill 
+2)killall
+3)pkill
+-----------------------------------------------
+Options and signals 
+-9: forcefully terminate 
+-15: properly terminate
+#ps -a 
+#kill -9 PID
+#kill -15 PID"	"#top - 10:22:01 up 1 min,  1 user,  load average: 6.71, 2.66, 0.98
+Tasks: 328 total,   3 running, 325 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 25.0 us, 37.5 sy,  0.0 ni, 37.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   1963.2 total,        142.7 free,   1151.1 used,        669.4 buff/cache
+MiB Swap:   4290.0 total,   4259.6 free,         30.4 used.        621.6 avail Mem
+
+
+        PID USER          PR  NI        VIRT        RES        SHR S  %CPU  %MEM         TIME+ COMMAND                                                      
+   2835 anjusuah  20   0 4295024 231548 119064 R  75.0  11.5   0:10.27 gnome-shell                                                  
+   4254 anjusuah  20   0  573304  54784  42024 R  50.0   2.7   0:01.15 gnome-terminal-                                              
+   4592 anjusuah  20   0   21968   4420   3468 R  50.0   0.2   0:00.33 top                                                          
+        283 root          20   0           0          0          0 I  25.0   0.0   0:00.19 kworker/u4:25-events_unbound                                 
+          1 root          20   0  166724  11972   8352 S   0.0   0.6   0:06.00 systemd                                                      
+          2 root          20   0           0          0          0 S   0.0   0.0   0:00.17 kthreadd                                                     
+          3 root           0 -20           0          0          0 I   0.0   0.0   0:00.00 rcu_gp                                                       
+          4 root           0 -20           0          0          0 I   0.0   0.0   0:00.00 rcu_par_gp                                                   
+          5 root           0 -20           0          0          0 I   0.0   0.0   0:00.00 slub_flushwq                                                 
+          6 root           0 -20           0          0          0 I   0.0   0.0   0:00.00 netns                                                        
+          7 root          20   0           0          0          0 I   0.0   0.0   0:00.14 kworker/0:0-events                                           
+          8 root           0 -20           0          0          0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri                                  
+          9 root          20   0           0          0          0 I   0.0   0.0   0:02.18 kworker/u4:0-events_unbound                                  
+         10 root           0 -20           0          0          0 I   0.0   0.0   0:00.00 mm_percpu_wq                                                 
+top - 10:23:29 up 3 min,  1 user,  load average: 1.89, 2.15, 0.96
+Tasks: 330 total,   1 running, 329 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  3.4 us,  1.2 sy,  0.0 ni, 95.1 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+MiB Mem :   1963.2 total,         72.6 free,   1470.1 used,        420.5 buff/cache
+MiB Swap:   4290.0 total,   4206.1 free,         83.9 used.        315.3 avail Mem"
+Controlling Services and Daemons	
+"Daemons:
+1)daemons are the processes that wait or run in the background performing 
+various tasks
+Eg:for ssh service one daemon runs ie sshd
+For http service one daemon runs ie httpd
+But few services may have more than 1 daemon
+How to start ,stop , restart enable disable daemons
+1) sudo apt-get install openssh-server
+2)systemctl start sshd
+3)systemctl stop sshd
+4)systemctl enable sshd
+5)systemctl disable sshd
+6)systemctl is-active sshd
+7)systemctl status sshd
+8)systemctl is-enabled sshd
+9)systemctl reload sshd
+Enable: it defines starting behaviour"	
+Su and sudo	
+"if lets say u have created one user and it doest now have root priviledges 
+then edit /etc/sudoers file "	
+Configuring and securing openssh services:	
+"ssh(secured shell):-Using ssh we can get remote access of machines
+Openssh:ssh tool available on open source community
+Pre-requisites :
+2)we need network of two machines
+3)assigns hostname to machines
+#hostnamectl set-hostname server
+4)Assigns IP address
+5)you need to configure hostname and Ip to both the machines client and server
+6)after this
+7)Both machines should communicate with each other using [(ping):we check
+connectivity between two different machines] using Ip address
+8)here we want both should communicate with each other using hostname
+So we need to edit the /etc/hosts file
+192.168.1.1 server
+192.168.1.2 client
+#Use this utility to which is a graphical utility using which we can edit the network
+interface
+->#nmtui (network we can edit that and we can provide the own Ip address)
+1)click on edit a connection which will show the ens160 or something (which is the
+network interface card) we have to change the property of that so click on edit
+2)under IPV4 ethernet chose manual and add 192.168.1.1/24 then ok
+3)activate the connection
+4)#ip addr (to verify that machine got ip address or not )
+5)do reboot
+6)#nmcli con mod ens160 autoconnect yes (so whenever system will reboot then all the
+changes will reflect automatically
+7)reboot(again check by verifying is it working fine or not)
+8)do the same for client machine as give ip addr as (192.168.1.2/24)
+9)lets ping 192.168.1.1 on (server machine) as it is working fine on both the machine if
+we check by ip addresses
+10) but if we do “ping client “ “ping server” Nope so we have not did name resolution
+mechanism so for that
+#vi /etc/hosts—-----------------------------------do this on both the machines :!wq!
+#192.168.1.1 server —-------------------------
+#192.1168.1.2 client —-------------------------
+11) now when we do “ping client” it would ping or establish the connection
+#configuring openssh:
+1)Now we want to access “server” machine remotely from “client” machine
+2)But ssh daemon must be started on server
+#systemctl status sshd (to check the status of ssh daemon it should be active )
+3)now will do “ssh server” or “ssh 192.168.1.1” on client machine
+4)it will ask yes or no means it will trying to create authenticity between server and client
+5)it will ask for password for server then we are good to go inside server machine
+[Knowledge purpose]
+1)we have saw that client machine has done authentication for server to get in so we
+can check those details under
+From client machine:
+# cd .ssh
+#ls
+#cat known_hosts ( we can check that server entry would be there with the name and
+its ip address ) basically it will create the known_hosts file when we enter the password
+first time then it will not ask for the next time this is a temporary file
+#create passwordless authentication:
+1)so on client machine (enter #ssh-keygen command )
+2)#ssh-keygen(using this will create keys (like in our home to lock the house we have
+keys similarly will create the keys here )
+3)keys (public keys and private keys)
+4)public keys : used to lock the instance
+5)private keys: will open the instance by private keys
+6)after this copy the public key on server by doing
+#ssh-copy-id server [copy public key on server machine during copy it will prompt
+For server password ]
+7)Once the public key gets copied on server machine we can access server from client
+machine without password]
+#[root@client:~]#ssh-keygen [it will ask for the path so set the path so that keys will
+Get created on that path only]
+(will get two keys basically (id_ rsa and id_rsa.pub) which private and public key
+#[root@client:]ssh-copy-id server [to copy the key on server machine]
+To check on server machine
+#[root@server:~]# cd .ssh
+#[root@server:~]# ls
+#[root@server:~]# cat ………
+check finally is that connection establish without password:
+#[root@client:~]# ssh server
+Set ssh passphrase security:
+#[root@client:~]#ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): /home/keyys
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/keyys
+Your public key has been saved in /home/keyys.pub
+The key fingerprint is:
+SHA256:JOqtuP59BIWMosCG1ApElkmI3hdo/g2nRGwSBtpf2A8 root@client
+The key's randomart image is:
++---[RSA 3072]----+
+|XB=o+o . |
+|O*o=.Bo . |
+|*.*.= E.. |
+|.o + *.* |
+| * =.S |
+| . + .. |
+| . .. |
+| . o . |
+| .+oo .. |
++----[SHA256]-----+
+Passphrase :It’s not a password
+#root@client:#ssh-copy-id server
+#root@client:#ssh server
+Enter passphrase :123
+This is how ssh can be achieve or configure"	
+day-10(analyzing and storing logs )	
+"Analysing and storing logs:
+Logs : tracking of systems happened in system
+Eg : logging , logout some application has started and ram utilization disk utilization
+Why we require logs ?
+-for monitoring (infrastructure should be healthy)
+-for troubleshooting
+Logs gets managed using following tools
+-journal :Introduced in RHEL5(It provides advanced monitoring and log management option)
+-rsyslog : Its a traditional tool its saves logs in different files according to configuration specified
+in /etc/rsyslog.conf
+First syslogs gets processes through journald and for further processing these
+logs send to rsyslog
+A journald logs does not persist between reboots
+We can use journalctl commands to se journald log messages
+vm@machine:~/Desktop$ journalctl (info will be after ro=eboot not before reboot)
+vm@machine:~/Desktop$ journalctl -n 5 ( to see the latest 5 lines of logs )
+If we want to check any specific priority logs
+
+vm@machine:~/Desktop$ journalctl -p err (we can check error and we can see
+customized view)
+vm@machine:~$ journalctl --since today (it will display todays logs )
+vm@machine:~$ journalctl -f (it will display start 10 lines )
+vm@machine:~$ journalctl -o verbose
+verbose − Output logs in a more detailed format that includes additional fields and
+metadata. It will show advanced option
+vm@machine:~$ journalctl --since ""2022-11-01 00:00:00"" --until ""2022-11-30 23:59:59""
+(You can use both options together to filter logs within a specific date/time range.)
+Journalctl :It will show advanced option for log monitoring or managing
+Now for further processing log will get sent to rsyslog
+vm@machine:~$ cat /etc/rsyslog.conf
+Now log storage location is /var/log — ls
+LOGrotate(utility):
+1)once in a day it will run for sure
+2)and it will check what are the log files which are 28 days older and it will automatically
+delete them if they are more then 28 days older
+NTP(network time protocol):
+1)its a service which maintains a clock"	
+(archive and compress)	
+"Archiving and copying files between the system
+Archiving files:
+1)we use archive file for taking backup
+tar : we use this command for data archive
+Operate tar command 👏
+To use the tar command one of the three following actions are required .
+1)c (create an archive)
+2) t (list the content of an archive)
+3)x (extract an archive)
+Commonly used options are 👍
+ #if i want to create the archive file
+vm@machine:~/Desktop$ tar cf archive.tar file1 file2
+-Create filename (whichfrom file1 file2 i want to create the archive.tar from that)
+-for backup i got the single folder
+vm@machine:~/Desktop/dir1$ tar cf archive.tar file1 file2
+vm@machine:~/Desktop/dir1$ ls
+archive.tar file1 file2
+vm@machine:~/Desktop/dir1$ mkdir dir3
+vm@machine:~/Desktop/dir1$ cd dir3/
+vm@machine:~/Desktop/dir1/dir3$ tar xf ../archive.tar
+vm@machine:~/Desktop/dir1/dir3$ ls
+file1 file2
+vm@machine:~/Desktop/dir1/dir3$ pwd
+/home/vm/Desktop/dir1/dir3
+vm@machine:~/Desktop/dir1/dir3$
+Now if i wanted to create any folders/direcory ka tar file
+vm@machine:~$ tar cf etc.tar /etc
+c:create
+f:filename
+/etc: is a folder for which we created the archive
+vm@machine:~$ ls
+Desktop Downloads Music Public Templates
+Documents etc.tar Pictures snap Videos
+Compresses archive or Compresses tar archive :
+-Reducing the size of archive file
+To create the compressed tar archive one the tar options can be used ->
+gzip compression→create compressed archive
+J for exact compression
+Filename:
+filename.tar.xz
+vm@machine:~/Desktop$ tar czf archive.tar.gz dir1/
+vm@machine:~/Desktop$ tar tzf archive.tar.gz
+dir1/
+dir1/dir3/
+dir1/dir3/file1
+dir1/dir3/file2
+dir1/file1
+dir1/archive.tar.gz
+dir1/file2
+dir1/archive.tar
+vm@machine:~/Desktop$ tar czf archive.tar.xz dir1/
+vm@machine:~/Desktop$ tar tzf archive.tar.xz
+dir1/
+dir1/dir3/
+dir1/dir3/file1
+dir1/dir3/file2
+dir1/file1
+dir1/archive.tar.gz
+dir1/file2
+dir1/archive.tar
+vm@machine:~/Desktop$"	
+day -11 installing and updating software packages	
+"If you want to install packages
+1)rpm: redhat package manager
+When we use rpm we have some drawbacks
+-some package dependency issue
+2)yum: yellow update manager
+-it resolve package dependency issue
+-eg :yum install vim (so it will install with all the dependency) working is same
+3)dnf: dandified yum
+-it address issues associated with yum
+-whatever the issues yum had is been addressed here
+-yum was slow not documented properly so all those things has been resolved
+here
+To install the packages required repository
+-Repository (storage for packages
+-vendor provided repository
+-repository with Redhat server (Require Subscription)
+-EPEL repository (Extra Packages for Enterprise Linux)
+-its a free online repository
+-Local package repository
+Package management :
+-how to install,remove and update packages
+"	
+Scheduling future linux task	
+"-Whenever using a UNIX-based operating system, certain tasks are to be performed repeatedly
+-Running them manually every single time is time-consuming and overall inefficient
+-To solve this issue, UNIX comes with its built-in task schedulers
+- We have two tools to perform this scheduling
+-These task schedulers act like a smart alarm clock
+-When the alarm goes off, the operating system will run the predefined task.
+-in the case of Linux, it comes with two basic but powerful tools
+1)at:schedule one time task (more suitable for one-time task scheduling)
+2)cron : schedule recurring task (default task scheduler)
+Recurring : baar baar (like if we want to take backup) regularly lena padega na
+at:
+atq: show list of at job configured
+priority level: a to z
+a :its a hight priority
+z :lowest priority
+Default priority : a
+at -c <index-number> :show details of specific at task
+atrm <index-number> :will remove specific at job
+—--------------------------------------------------------------------------------------------------------------------
+Before starting u need to start the atd and enabled also
+Systemctl start atd
+Systemctl enabled atd —>
+Enabled: when machine reboot what should be the behavior of that service if it enabled that
+service will get automatically start and if it is disabled that mns whenever system will get
+rebooted that services will be on a stop state
+Enabled sets the default behavior
+Script
+-command ke backend me script hi run hota hai
+-which ls
+- which ls
+-/usr/bin/ls
+-for eg : it is the collection of different commands
+- it will follow some that rules
+-will put collection of different commands in one file and will put one executable permission
+vm@machine:~/Desktop$ at
+Garbled time
+vm@machine:~/Desktop$ date
+Monday 07 August 2023 11:49:09 PM IST
+vm@machine:~/Desktop$ echo ""date >> ~/myjob"" | at now +1min
+-pipe will join two commands
+-Date would be append to user ki home directory me myjob naam ka ek file create hoga
+-and this will be one time task schedule once execute it will remove
+echo ""date >> ~/myjob"" | at -q j now +3min
+5 Tue Aug 8 10:46:00 2023 j vm
+-If i want the priority level is j
+at -c 6
+-Kisi job me ya task me kya content hai ye dekhna ho toh
+atrm 6
+-it will remove that job
+Cron:
+Schedule recurring task(which get executed from monday to friday 1 task will get executed at 10
+pm on regular basis or every month 1st date something should get execute)
+Cron format 👍
+Min hrs date-of-month month days-of-week
+00 5 1-31 1-12 mon-sun
+15 5-7 0-7
+*/7 * 0-sunday
+1-monday
+2-tuesday
+3-wednesday
+7-sunday
+ex: 0 9 2 2 *
+2nd feb 9am every day
+2)*/7 9-16 * jul 5 echo “email”
+Every 7 min 9am to 5 pm on any date in the month of july fridays
+3)58 23 * * 1-5
+58 min 11 pm monday-friday [every week day before two minutes midnight ]
+4) 0 9 * * 1-5
+9 am on weekdays from monday-friday
+Mutt-
+-to that practically just type crontab -e
+Crontab -l : show cronjob list
+Crontab -e :edit cronjob
+Crontab -r :erase/remove cron job
+logrorate: this is the command which will delete autom"	
+	
+	
+	
